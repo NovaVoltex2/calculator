@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bgcolor:rgb(0, 80, 80);
+    --inputbg:rgba(0, 171, 171, 0.499);
+    --outputbg:rgba(119, 204, 204, 0.136);
+    --fxnpad:red;
+    --numpad:#002929;
+    --opspad:#002929;
+    --univGap:15px;
+    --baseGap:10px;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    background: linear-gradient(45deg,rgba(0, 73, 57, 0.344),rgba(0, 130, 115, 0.481));
+}
+#calculatorBoard{
+    background-color: var(--bgcolor);
+    max-height: fit-content;
+    padding: 25px 20px;
+    max-width: fit-content;
+    border-radius: 20px;
+    border: 10px groove rgba(0, 0, 0, 0.667);
+    display: grid;
+    grid-template-columns: 100%;
+    gap: var(--univGap);
+    box-shadow: 5px 5px 10px 0 #00000054;
+}
+#screen{
+display: flex;
+flex-direction: column;
+width: 100%;
+position: relative;
+overflow: hidden;
+}
+#screen span{
+    font-size: 40px;
+    font-weight: 700;
+ outline: none;
+ overflow: hidden;
+ padding: 0 5px;
+}
+.display,.inputArea{
+    width: 400px;
+    padding: 10px 5px;  
+    color: aliceblue;
+    overflow: hidden;
+}
+.display{
+background-color: var(--outputbg);
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+.inputArea{
+background-color: var(--inputbg);
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;
+}
+.display span{
+    float: right;
+}
+.inputArea span{
+    float: left;
+    overflow: hidden;
+}
+button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+}
+.nums{
+    background-color: var(--numpad);
+    color: aliceblue;
+    font-size: 25px;
+    font-weight: 500;
+    transition: ease-in-out 0.2s;
+
+}
+.nums:hover{
+    background-color: var(--inputbg);
+    cursor: pointer;
+    transition: ease-in-out 0.2s;
+}
+.ops{
+    color: var(--opspad);
+    font-size: 25px;
+    font-weight: 700;
+    display: grid;
+    place-content: center;
+    transition: ease-in-out 0.2s;
+}
+.ops:hover{
+background-color: var(--outputbg);
+color: aliceblue;
+cursor: pointer;
+transition: ease-in-out 0.2s;
+box-shadow: inset 0 0 5px 10px #22858572;
+}
+#pad{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: var(--baseGap);
+    width: 100%;
+    justify-content: center;
+}
+.numpad{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: var(--univGap);
+}
+.operations{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: var(--univGap);
+    justify-content: center;
+}
+.operations button{
+      padding: 5px 10px; 
+}
+.functionsArea{
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+}
+.functionsArea button{
+    background-color: var(--inputbg);
+    font-weight: 600;
+    text-align: center;
+    color: aliceblue;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+.functionsArea button:hover{
+    background-color: var(--outputbg);
+}
+.fxn:last-child{
+    background-color: var(--numpad);
+    /* color: var(--outputbg); */
+    text-transform: uppercase;
+    filter: contrast(2);
+}
+#history{
+    position: absolute;
+    z-index: 99;
+    margin: 20px 15px;
+    background-color: var(--bgcolor);
+    color: aliceblue;
+    cursor: pointer;
+}
+#history:hover{
+    background-color: var(--inputbg);
+}
+#history:hover ~ #historyMenu,#historyMenu:hover{
+    transform: translateX(0);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1.5s;
+}
+#historyMenu{
+    background-color: rgba(1, 40, 40, 0.509);
+    position: absolute;
+    min-width: 25em;
+    min-height: 100%;
+    transform: translateX(-500px);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+    backdrop-filter: blur(5px);
+    color: aliceblue;
+}
+#historyMenu ul{
+    display: flex;
+    flex-direction: column;
+    padding:15px 0;
+    gap: 5px;
+    margin-top: 60px;
+}
+#historyMenu ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items:last baseline;
+    padding: 5px 15px;
+    background-color: #00292950;
+    cursor: pointer;
+}
+#historyMenu ul li:hover{
+    background-color: #018484;
+}
+.histo{
+    font-size: 25px;
+    font-weight: 700;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    text-transform: capitalize;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

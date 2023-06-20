@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>calculator</title>
+</head>
+<body>
+    <button id="history">history <i class="fa fa-history"></i> </button>
+    <div id="historyMenu">
+        <h1 class="histo">history</h1>
+      <ul>
+      </ul>
+    </div>
+    <div id="calculatorBoard">
+        <div id="screen">
+            <div class="inputArea">
+                <span contenteditable="true"></span>
+            </div>
+            <div class="display">
+                <span>0</span>
+            </div>
+        </div>
+        <div id="pad">
+            <div class="functionsArea">
+                <button class="fxn">(</button>
+                <button class="fxn">)</button>
+                <button class="fxn">( - )</button>
+                <button class="fxn">sin</button>
+                <button class="fxn">cos</button>
+                <button class="fxn">tan</button>
+                <button class="fxn">ans</button>
+            </div>
+            <div class="numpad">
+                <button class="nums">1</button>
+                <button class="nums">2</button>
+                <button class="nums">3</button>
+                <button class="nums">4</button>
+                <button class="nums">5</button>
+                <button class="nums">6</button>
+                <button class="nums">7</button>
+                <button class="nums">8</button>
+                <button class="nums">9</button>
+                <button class="nums">0</button>
+                <button class="nums">.</button>
+                <button class="nums">=</button>
+            </div>
+            <div class="operations">
+                <button class="ops">Del</button>
+                <button class="ops">CE</button>
+                <button class="ops">+</button>
+                <button class="ops">-</button>
+                <button class="ops">*</button>
+                <button class="ops">/</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js" defer></script>
+</body>
+</html>
